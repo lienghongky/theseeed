@@ -1,0 +1,2 @@
+export const NAV_SELECT = "NAV_SELECT"
+export const NAV_SELECT_BY_PATHG = "NAV_SELECT_BY_PATHG"
