@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "676848c203d5d7d0674fac1993b94cad",
+    "revision": "e2cca7698f3e7eba06c46f5697f95c0c",
     "url": "/theseeed/index.html"
   },
   {
-    "revision": "a0928f9c969a2f5ce2c2",
+    "revision": "951fee0d1e7e072c5400",
     "url": "/theseeed/static/css/main.ba1f19f6.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/theseeed/static/js/2.ab8e359c.chunk.js"
   },
   {
-    "revision": "a0928f9c969a2f5ce2c2",
-    "url": "/theseeed/static/js/main.32bfe130.chunk.js"
+    "revision": "951fee0d1e7e072c5400",
+    "url": "/theseeed/static/js/main.a9548b82.chunk.js"
   },
   {
     "revision": "f20d619a6eca9ab10eb9",
