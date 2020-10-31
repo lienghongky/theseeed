@@ -1,41 +1,41 @@
 import * as actionConst from './actionConst'
 import { client } from '../../prismic-configuration'
-export const AddPost = post => {
+export const AddPage = Page => {
     return {
-        type : actionConst.POST_ADD,
-        payload:post
+        type : actionConst.PAGE_ADD,
+        payload:Page
     }
 }
 
-export const fetchPostRequest = () => {
+export const fetchPageRequest = () => {
     return {
-      type: actionConst.FETCH_POST_REQUEST
+      type: actionConst.FETCH_PAGE_REQUEST
     }
   }
   
-export const fetchPostSuccess = list => {
+export const fetchPageSuccess = list => {
     return {
-      type: actionConst.FETCH_POST_SUCCESS,
+      type: actionConst.FETCH_PAGE_SUCCESS,
       payload: list
     }
   }
   
-export const fetchPostFailure = error => {
+export const fetchPageFailure = error => {
     return {
-      type: actionConst.FETCH_POST_FAILURE,
+      type: actionConst.FETCH_PAGE_FAILURE,
       payload: error
     }
   }
 
-export const fetchPosts = ()=>{
+export const fetchPages = ()=>{
   return dispatch => {
-    dispatch(fetchPostRequest)
+    dispatch(fetchPageRequest)
     client.getSingle('homepage').then((res)=>{
       console.log(res.data)
-      dispatch(fetchPostSuccess(res.data))
+      dispatch(fetchPageSuccess(res.data))
     }).catch(error=>{
       console.log(error)
-      dispatch(fetchPostFailure(error))
+      dispatch(fetchPageFailure(error))
     })
   }
 }

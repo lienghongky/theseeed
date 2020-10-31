@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
+import 'element-react';
+
 import {
   BrowserRouter,
   Route,
@@ -13,9 +15,16 @@ import {
   Preview,
   NotFound,
   Page,
-  HomePage
+  HomePage,
+  HelpPage,
+  ContactPage,
+  AboutPage,
+  SignInPage,
+  SignUpPage,
+  DetailPage
 } from './pages'
 import Nav from './layout/nav';
+import Footer from './layout/footer'
 // import Home from './pages/home/home'
 // import Student from './pages/student/student';
 // import Teacher from './pages/teacher/teacher';
@@ -39,8 +48,16 @@ const App = (props) => {
     component:Page
   },
   {
+    path:'/contact',
+    component:ContactPage
+  },
+  {
+    path:'/about',
+    component:AboutPage
+  },
+  {
     path:'/help',
-    component:Help
+    component:HelpPage
   },
   {
     path:'/preview',
@@ -49,6 +66,14 @@ const App = (props) => {
   {
     path:'/home',
     component:HomePage
+  },
+  {
+    path:'/login',
+    component:SignInPage
+  },
+  {
+    path:'/signup',
+    component:SignUpPage
   }
 ]
 
@@ -59,12 +84,13 @@ const App = (props) => {
         <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
       </Helmet>
 
-      <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
+      <BrowserRouter>
         <Nav {...props}/>
         <Switch>
           <Redirect exact from='/' to='/home' />
           {routes.map(e=>(<Route key={e.path} exact path={e.path} component={e.component} />))}
           <Route exact path='/page/:uid' component={Page} />
+          <Route exact path='/detail/:uid' component={DetailPage} />
           {/* <Route path={"/"} exact render={(props)=><><Home {...props}/><Footer/></>}/>
           <Route path={"/student"} render={(props)=><Student {...props}/>}/>
           <Route path={"/teacher"} render={(props)=><TeacherDashboard {...props}/>}/>
@@ -80,6 +106,7 @@ const App = (props) => {
           <Route exact path='/preview' component={Preview} /> */}
           <Route component={NotFound} />
         </Switch>
+        <Footer/>
       </BrowserRouter>
     </Fragment>
   )

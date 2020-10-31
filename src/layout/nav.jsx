@@ -47,7 +47,7 @@ const Nav = ({ match,history })=>{
         }
 
         return ( 
-            <div style={navStyle} className="fixed top-0 inset-x-0 bg-gray-200  shadow-lg font-semibold text-gray-900 flex p-4 sm:pl-10  bg-opacity-75">
+            <div style={navStyle} className="fixed top-0 inset-x-0 bg-gray-200  shadow-lg font-semibold text-gray-900 flex p-4 sm:pl-10  bg-opacity-75 border border-opacity-25 border-solid border-red-600">
                     <div className="flex items-center">
                         <Link className="hover:text-red-600" to="/">
                             <div className="flex justify-center items-center">
@@ -61,7 +61,7 @@ const Nav = ({ match,history })=>{
                     <div className="hidden sm:flex flex-1  justify-end items-center px-4 space-x-4 text-sm">
                         {linksComponent}
                         <div className="px-4 space-x-2 pl-8">
-                        <Link className=" rounded-lg p-2 px-4 text-red-600" to="/login">Login</Link>
+                        <Link className=" rounded-lg p-2 px-4 text-gray-800" to="/login">Login</Link>
                         <Link className="rounded-lg p-2 px-4 border-solid border-2 border-red-600" to="/signup">Sign up</Link>
                         </div>
                     </div>

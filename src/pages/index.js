@@ -1,5 +1,12 @@
+
 export { default as Help } from './Help'
 export { default as Preview } from './Preview'
 export { default as NotFound } from './NotFound'
 export { default as Page } from './Page'
-export { default as HomePage } from './homePage'
+export { default as SignInPage } from './Auth/singin'
+export { default as SignUpPage } from './Auth/signup'
+export { default as HomePage } from './homepage/homePage'
+export { default as HelpPage } from './helppage'
+export { default as ContactPage } from './contactpage'
+export { default as AboutPage } from './aboutpage'
+export {default as DetailPage } from './detailpage'

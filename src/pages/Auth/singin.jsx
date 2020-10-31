@@ -5,11 +5,12 @@ class Singin extends Component {
     render() {
         return (
                 <div>
-                    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-600 vai-pink-400 to-red-500">
+                    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-200">
                         <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg bg-opacity-75">
                             <div>
-                            <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow"/>
-                            <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+                            <img className="mx-auto h-12 w-auto" src="https://prismic.io/doc-assets/images/logo-dark.svg" alt="Workflow"/>
+                            <h2 className="px-4 text-red-600 text-center font-bold">TheSeeed</h2>
+                            <h2 className="mt-6 text-center text-xl leading-9 font-extrabold text-gray-900">
                                 Sign in to your account
                             </h2>
                             <p className="mt-2 text-center text-sm leading-5 text-gray-600">

@@ -3,18 +3,18 @@ const initialState = {
     loading: false,
     links: [
         {
-            path:'/page/home',
+            path:'/home',
             title:'Home',
             icon:'menu'
         },
         {
-            path:'/today',
-            title:'Today',
+            path:'/contact',
+            title:'Contact',
             icon:'menu'
         },
         {
-            path:'/weekly',
-            title:'Weekly',
+            path:'/about',
+            title:'About',
             icon:'menu'
         },
         {

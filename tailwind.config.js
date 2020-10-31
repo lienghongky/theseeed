@@ -336,9 +336,11 @@ module.exports = {
       ...theme('spacing'),
       full: '100%',
       screen: '100vh',
+      '100':'32rem'
     }),
     inset: {
       '0': '0',
+      '4': '1rem',
       auto: 'auto',
     },
     letterSpacing: {

@@ -1,26 +1,26 @@
 import * as actionConst from './actionConst'
 const initialState = {
     loading: false,
-    posts: [],
+    pages: [],
     error: ''
   }
-const PostReducer = (state = initialState,action)=>{
+const PageReducer = (state = initialState,action)=>{
     switch(action.type){
-        case actionConst.FETCH_POST_REQUEST:
+        case actionConst.FETCH_PAGE_REQUEST:
             return {...state,loading:true,error:''}
-        case actionConst.FETCH_POST_FAILURE:
+        case actionConst.FETCH_PAGE_FAILURE:
             return {...state,loading:false,error:action.payload}
-        case actionConst.FETCH_POST_SUCCESS:
-            return {...state,loading:false,error:'',posts:action.payload}
-        case actionConst.POST_ADD:
+        case actionConst.FETCH_PAGE_SUCCESS:
+            return {...state,loading:false,error:'',pages:action.payload}
+        case actionConst.PAGE_ADD:
             return {...state}
-        case actionConst.POST_UPDATE:
+        case actionConst.PAGE_UPDATE:
             return {...state}
-        case actionConst.POST_REMOVE:
+        case actionConst.PAGE_REMOVE:
                 return {...state}
         default:
             return state;
     }
 }
 
-export default PostReducer
+export default PageReducer
