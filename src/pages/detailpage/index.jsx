@@ -99,7 +99,7 @@ const DetailPage = ({ match }) => {
     
                           <div className="absolute bottom-4 right-4 text-xs font-bold text-gray-900 flex-1 flex items-end justify-end">
                             <RouteLink   to={`/detail/${post.id}`}><div className=" hover:bg-red-600 hover:text-white py-1 px-4 mx-1 border border-solid ">READ</div></RouteLink>
-                            <RouteLink   to="/login" target="_blank"><div className=" hover:bg-red-600 hover:text-white py-1 px-4 mx-1 border border-solid ">SAVE</div></RouteLink>
+                            {/* <RouteLink   to="/login" target="_blank"><div className=" hover:bg-red-600 hover:text-white py-1 px-4 mx-1 border border-solid ">SAVE</div></RouteLink> */}
                               {/* {RichText.render(item.content)} */}
                           </div>
                         </div>
