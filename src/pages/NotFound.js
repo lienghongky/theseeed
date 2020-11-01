@@ -8,7 +8,7 @@ import NotFoundIcon from '../assets/icons/notfoundicon.png'
 const NotFound = () => {
   return (
     <div className="py-30 h-screen flex justify-items-center flex-col items-center">
-      <img className="h-1/2" src={NotFoundIcon} alt="logo" />
+      <img className="h-1/2 object-contain" src={NotFoundIcon} alt="logo" />
       <h2 className="py-4">Document not found</h2>
       <p className="text-blue-400"><Link to="/">Return to homepage</Link></p>
     </div>

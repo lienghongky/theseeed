@@ -14,6 +14,7 @@ const Nav = ({ match,history })=>{
     const handleLinkClicked = (e)=>{
         
     }
+    const logo = useSelector(state => state.nav.logo)
     const location = useLocation();
     const links = useSelector(state => state.nav.links)
     const selectedLink = useSelector(state => state.nav.selectedLink)
@@ -21,6 +22,7 @@ const Nav = ({ match,history })=>{
     const linksComponent = links.map(e=>(<Link onClick={()=>handleLinkClicked(e)} key={e.path} className={`hover:text-red-600 ${selectedLink && selectedLink.path === e.path && 'text-red-500'}`} to={e.path}>{e.title}</Link>))
     useEffect(()=>{
         console.log(location.pathname)
+        linkDispatch(NavAction.fetchLogo())
         linkDispatch(NavAction.selectLinkByPath(location.pathname))
     },[location])
     // useEffect(()=>{
@@ -51,8 +53,8 @@ const Nav = ({ match,history })=>{
                     <div className="flex items-center">
                         <Link className="hover:text-red-600" to="/">
                             <div className="flex justify-center items-center">
-                            <img className="mx-auto h-10 w-auto" src="https://prismic.io/doc-assets/images/logo-dark.svg" alt="Workflow"/>
-                            <h2 className="px-4 text-red-600">TheSeeed</h2>
+                            <img className="mx-auto h-10 w-auto" src={logo.icon.url} alt="Workflow"/>
+                            <h2 className="px-4 text-red-600">{logo.text}</h2>
                             </div>
                         </Link>
                     </div>

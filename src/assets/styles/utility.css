@@ -194,3 +194,10 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+
+@layer components {
+  h1 {
+    @apply "text-3xl";
+  }
+}

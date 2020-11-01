@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import './assets/styles/main.css';
 import './assets/styles/utility.css';
+import './assets/js/utility.js';
 import { Provider } from 'react-redux'
 import store from './redux'
 import {
@@ -12,7 +13,7 @@ import {
 
 ReactDOM.render(
   
-    <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
+    <BrowserRouter>
       <Provider store = {store}>
         <App />
     </Provider>

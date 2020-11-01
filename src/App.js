@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import 'element-react';
 
@@ -7,7 +7,8 @@ import {
   Route,
   Switch,
   Redirect,
-  withRouter
+  withRouter,
+  useLocation
 } from 'react-router-dom'
 import { apiEndpoint } from './prismic-configuration'
 import { 
@@ -39,6 +40,17 @@ import Footer from './layout/footer'
 /**
  * Main application componenet
  */
+
+
+function _ScrollToTop(props) {
+  const { pathname } = useLocation()
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [pathname]);
+  return props.children
+}
+const ScrollToTop = withRouter(_ScrollToTop)
+
 const App = (props) => {
   const repoNameArray = /([^/]+)\.cdn.prismic\.io\/api/.exec(apiEndpoint)
   const repoName = repoNameArray[1]
@@ -84,27 +96,31 @@ const App = (props) => {
         <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
       </Helmet>
 
-      <BrowserRouter>
+      <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
         <Nav {...props}/>
         <Switch>
-          <Redirect exact from='/' to='/home' />
-          {routes.map(e=>(<Route key={e.path} exact path={e.path} component={e.component} />))}
-          <Route exact path='/page/:uid' component={Page} />
-          <Route exact path='/detail/:uid' component={DetailPage} />
-          {/* <Route path={"/"} exact render={(props)=><><Home {...props}/><Footer/></>}/>
-          <Route path={"/student"} render={(props)=><Student {...props}/>}/>
-          <Route path={"/teacher"} render={(props)=><TeacherDashboard {...props}/>}/>
-          <Route path={"/teachers"} render={(props)=><Teacher {...props}/>}/>
-          <Route path={"/teacherdetail"} render={(props)=><TeacherDetail {...props}/>}/>
-          <Route path={"/live"} render={(props)=><Live {...props}/>}/>
-          <Route path={"/help"} render={(props)=><Help {...props}/>}/>
-          <Route path={"/plan"} render={(props)=><Plan {...props}/>}/>
-          <Route path={"/history"} render={(props)=><History {...props}/>}/>
-          <Route path={"/login"} render={(props)=><Singin {...props}/>}/>
-          <Route path={"/signup"} render={(props)=><Signup {...props}/>}/> */}
-          {/* <Route exact path='/help' component={Help} />
-          <Route exact path='/preview' component={Preview} /> */}
-          <Route component={NotFound} />
+          
+            <Redirect exact from='/' to='/home' />
+            <Route exact path='/home/:uid'    render={(props)=><HomePage {...props}/>} />
+            <Route exact path='/page/:uid'    render={(props)=><Page {...props}/>}/>
+            <Route exact path='/detail/:uid' render={(props)=><DetailPage {...props}/>}/>
+  
+            {routes.map(e=>(<Route key={e.path} exact path={e.path} component={e.component} />))}
+            {/* <Route path={"/"} exact render={(props)=><><Home {...props}/><Footer/></>}/>
+            <Route path={"/student"} render={(props)=><Student {...props}/>}/>
+            <Route path={"/teacher"} render={(props)=><TeacherDashboard {...props}/>}/>
+            <Route path={"/teachers"} render={(props)=><Teacher {...props}/>}/>
+            <Route path={"/teacherdetail"} render={(props)=><TeacherDetail {...props}/>}/>
+            <Route path={"/live"} render={(props)=><Live {...props}/>}/>
+            <Route path={"/help"} render={(props)=><Help {...props}/>}/>
+            <Route path={"/plan"} render={(props)=><Plan {...props}/>}/>
+            <Route path={"/history"} render={(props)=><History {...props}/>}/>
+            <Route path={"/login"} render={(props)=><Singin {...props}/>}/>
+            <Route path={"/signup"} render={(props)=><Signup {...props}/>}/> */}
+            {/* <Route exact path='/help' component={Help} />
+            <Route exact path='/preview' component={Preview} /> */}
+            <Route component={NotFound} />
+          
         </Switch>
         <Footer/>
       </BrowserRouter>

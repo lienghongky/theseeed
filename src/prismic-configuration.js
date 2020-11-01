@@ -2,7 +2,7 @@ import Prismic from 'prismic-javascript'
 
 // -- Prismic API endpoint
 // Determines which repository to query and fetch data from
-export const apiEndpoint = 'https://React-sites.cdn.prismic.io/api/v2' //'https://theseed.cdn.prismic.io/api/v2'
+export const apiEndpoint = 'https://theseed.cdn.prismic.io/api/v2'//'https://React-sites.cdn.prismic.io/api/v2' //
 
 // -- Access Token if the repository is not public
 // Generate a token in your dashboard and configure it here if your repository is private
