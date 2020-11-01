@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/theseeed/static/css/main.82c71b3b.chunk.css",
-    "main.js": "/theseeed/static/js/main.da6a9807.chunk.js",
-    "main.js.map": "/theseeed/static/js/main.da6a9807.chunk.js.map",
+    "main.js": "/theseeed/static/js/main.3b809ed9.chunk.js",
+    "main.js.map": "/theseeed/static/js/main.3b809ed9.chunk.js.map",
     "runtime-main.js": "/theseeed/static/js/runtime-main.6ff9ab70.js",
     "runtime-main.js.map": "/theseeed/static/js/runtime-main.6ff9ab70.js.map",
-    "static/js/2.71f26caf.chunk.js": "/theseeed/static/js/2.71f26caf.chunk.js",
-    "static/js/2.71f26caf.chunk.js.map": "/theseeed/static/js/2.71f26caf.chunk.js.map",
+    "static/js/2.06a4bef4.chunk.js": "/theseeed/static/js/2.06a4bef4.chunk.js",
+    "static/js/2.06a4bef4.chunk.js.map": "/theseeed/static/js/2.06a4bef4.chunk.js.map",
     "index.html": "/theseeed/index.html",
-    "precache-manifest.78c8494a2d45f24a7debf5eeb5e24b22.js": "/theseeed/precache-manifest.78c8494a2d45f24a7debf5eeb5e24b22.js",
+    "precache-manifest.10ae1e600340c17faf0a0d5ae134a63a.js": "/theseeed/precache-manifest.10ae1e600340c17faf0a0d5ae134a63a.js",
     "service-worker.js": "/theseeed/service-worker.js",
     "static/css/main.82c71b3b.chunk.css.map": "/theseeed/static/css/main.82c71b3b.chunk.css.map",
-    "static/js/2.71f26caf.chunk.js.LICENSE.txt": "/theseeed/static/js/2.71f26caf.chunk.js.LICENSE.txt",
+    "static/js/2.06a4bef4.chunk.js.LICENSE.txt": "/theseeed/static/js/2.06a4bef4.chunk.js.LICENSE.txt",
     "static/media/notfoundicon.png": "/theseeed/static/media/notfoundicon.ad36f209.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6ff9ab70.js",
-    "static/js/2.71f26caf.chunk.js",
+    "static/js/2.06a4bef4.chunk.js",
     "static/css/main.82c71b3b.chunk.css",
-    "static/js/main.da6a9807.chunk.js"
+    "static/js/main.3b809ed9.chunk.js"
   ]
 }
