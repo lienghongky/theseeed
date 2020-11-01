@@ -24,7 +24,7 @@ const Tabs = () => {
     
     const tabsComponent = tabs !== undefined && tabs !== null && tabs.map((e,index)=>(
         <Link onClick={()=>setSelectedTab(e)} key={index} to={`/home/${e.text}`}>
-            <div   className="relative transistion duration-100 cursor-pointer px-4 border border-t-0 border-r-0 border-l-0 border-solid">
+            <div   className="relative transistion duration-100 cursor-pointer px-4 border-0 border-t-0 border-r-0 border-l-0 border-solid">
                 <p className={`text-lg font-medium hover:text-red-600 ${selectedTab !== null && selectedTab.text === e.text && "text-red-600 border-red-600 border-2 border-t-0 border-r-0 border-l-0 border-solid"}`}>{e.text}</p>
             </div>
         </Link>

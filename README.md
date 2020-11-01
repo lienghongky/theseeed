@@ -1,5 +1,8 @@
 [![Dependency Status](https://david-dm.org/prismicio/reactjs-starter.svg)](https://david-dm.org/prismicio/reactjs-starter)
 
+
+
+![Program](/sh.png)
 # Prismic React Starter
 This project has been created with [`create-react-app`](https://github.com/facebookincubator/create-react-app). We added a zest of [prismic](https://github.com/prismicio/javascript-kit) inside it. It serves as a boilerplate React+Prismic application that will serves as a quick guide to get your own applications off the ground
 
