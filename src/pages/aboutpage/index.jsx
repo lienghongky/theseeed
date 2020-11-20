@@ -23,11 +23,11 @@ const AboutPage = () => {
         if(slice.slice_type == 'team'){
             const  teams = slice.items.map((item,index)=>
                  (
-                    <div className="p-4 m-2 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center">
+                    <div className="floating p-4 m-2 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center">
                         <img className="w-34 h-34 rounded-full overflow-hidden shadow-lg" src={item.portrait.url} alt=""/>
                         <h1 className="font-bold text-sm text-gray-800 pt-4">{RichText.asText(item.first_and_lastname,linkResolver)}</h1>
                         <p className="text-sm font-thin text-gray-600">{RichText.asText(item.position,linkResolver)}</p>
-                        <a href={item.link.url} className=""><p className="p-1 px-4 mt-4 text-gray-600  border border-gray-600 border-solid rounded-lg text-sm">SEE MORE</p></a>
+                        <a href={item.link.url} target="_blank" className=""><p className="p-1 px-4 mt-4 text-gray-600 hover:text-red-600  border border-gray-600 hover:border-red-600 border-solid rounded-lg text-sm">SEE MORE</p></a>
                     </div>
                 )
             )
@@ -63,8 +63,10 @@ const AboutPage = () => {
                 </p>
             </div>
             </div>
-            <div className=" flex justify-center">
+            <div className=" flex flex-col items-center justify-center">
+                <h1>OUR TEAM</h1>
             <div className="py-10 flex flex-wrap justify-center items-center">
+                
                 {teamComponent}
             </div>
             </div>

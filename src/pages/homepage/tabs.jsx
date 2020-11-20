@@ -8,7 +8,6 @@ const Tabs = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchTages())
-        console.log('Fetch tage')
     }, []);
     const tabs = useSelector(state => state.post.tages)
     const [selectedTab,setSelectedTab] = useState({

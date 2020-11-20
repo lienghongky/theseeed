@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class Singin extends Component {
-    render() {
+
+const Singin =  () =>{
+    const logoData = useSelector(state=>state.nav.logo)
         return (
                 <div>
                     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-200">
                         <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg bg-opacity-75">
                             <div>
-                            <img className="mx-auto h-12 w-auto" src="https://cdn3.iconfinder.com/data/icons/fresh-fruits-3/48/fruit-11-2-512.png" alt="Workflow"/>
-                            <h2 className="px-4 text-red-600 text-center font-bold">TheSeeed</h2>
+                            <img className="mx-auto h-12 w-auto" src={logoData && logoData.icon.url} alt="Workflow"/>
+                            <h2 className="px-4 text-red-600 text-center font-bold">{logoData && logoData.text}</h2>
                             <h2 className="mt-6 text-center text-xl leading-9 font-extrabold text-gray-900">
                                 Sign in to your account
                             </h2>
@@ -63,7 +65,7 @@ class Singin extends Component {
 
             </div>
         );
-    }
+
 }
 
 export default Singin;

@@ -30,6 +30,7 @@ const Page = ({ match }) => {
       if (result) {
         // We use the State hook to save the document
         return setDocData(result)
+        toggleNotFound(true)
       } else {
         // Otherwise show an error message
         console.warn('Page document not found. Make sure it exists in your Prismic repository')
@@ -55,7 +56,7 @@ const Page = ({ match }) => {
   } else if (notFound) {
     return <NotFound />
   }
-  return null
+  return (<div className="min-h-screen"><NotFound /></div>)
 }
 
 export default Page

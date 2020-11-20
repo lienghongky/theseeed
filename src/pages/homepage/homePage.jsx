@@ -27,6 +27,21 @@ const HomePage = ({match}) => {
 
     },[tage])
 
+    const bannerComponent = PageData && PageData.body.map((slice, index)=>{
+      if(slice.slice_type == 'banner_with_caption'){
+          return (
+              <a href={slice.primary.button_link.url} target="_blank" className="w-full flex flex-col items-center justify-center overflow-hidden shadow-md bg-white transition duration-100 transform hover:scale-95">
+                      <img className="w-full h-2/3 overflow-x-hidden object-cover" src={slice.primary.image_banner.url} alt=""/>
+                      <div className="py-4">
+                      <h1 className="text-sm text-gray-800 text-center">{RichText.asText(slice.primary.title_of_banner,linkResolver)}</h1>
+                      <p className="text-sm font-thin text-gray-600 text-center">{RichText.asText(slice.primary.description,linkResolver)}</p>
+                      {/* <a href={slice.primary.button_link.url} target="_blank" className=""><p className="p-1 px-4 mt-4 text-gray-600  border border-gray-600 border-solid rounded-lg text-sm">{RichText.asText(slice.primary.button_label,linkResolver)}</p></a> */}
+                      </div>
+              </a>
+          )
+      }
+  })
+
     const blogContent = posts && posts.map((post,index)=>(
       <div key={index+10} className="flex flex-wrap p-4 m-4 relative">
         <div className="w-full sm:w-2/5">
@@ -93,6 +108,9 @@ const HomePage = ({match}) => {
              <div className="w-full sm:w-1/3">
                <h1 className="text-xl font-bold text-center pt-10 sm:py-4 text-red-600">HOT TOPIC</h1>
               {smBlogContent}
+              <div className="flex flex-col items-center">
+                {bannerComponent}
+              </div>
              </div>
              </div>
         </div>

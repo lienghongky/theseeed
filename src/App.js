@@ -56,10 +56,6 @@ const App = (props) => {
   const repoName = repoNameArray[1]
   const routes = [
   {
-    path:'/page:uid',
-    component:Page
-  },
-  {
     path:'/contact',
     component:ContactPage
   },

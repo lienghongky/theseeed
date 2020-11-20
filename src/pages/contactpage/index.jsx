@@ -24,7 +24,7 @@ const ContactPage = () => {
             const  teams = slice.items.map((item,index)=>
                  (
                     <a href={item.link.url} target="_blank"  key={index} className="px-4 cursor-pointer">
-                        <img className="w-10 h-10 object-contain mx-auto" src={item.icon.url} alt=""/>
+                        <img className="w-8 h-8 object-contain mx-auto" src={item.icon.url} alt=""/>
                         <p className="text-bold text-center text-sm pt-4">{RichText.asText(item.name,linkResolver)}</p>
                     </a>
                 )
