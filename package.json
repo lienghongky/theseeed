@@ -23,9 +23,9 @@
     "whatwg-fetch": "^3.4.1"
   },
   "devDependencies": {
-    "react-hot-loader": "^4.5.3",
     "autoprefixer": "^9.8.6",
-    "postcss-cli": "^8.2.0"
+    "postcss-cli": "^8.2.0",
+    "react-hot-loader": "^4.5.3"
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",

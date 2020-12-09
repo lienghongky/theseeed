@@ -1,10 +1,11 @@
 import React,{ useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import {fetchMiniPosts, fetchPosts} from '../../redux/post/action'
-import {Link as RouteLink} from 'react-router-dom'
+import {Link as RouteLink, useLocation} from 'react-router-dom'
 import {RichText, Date  } from 'prismic-reactjs'
 import {client, linkResolver } from '../../prismic-configuration'
 import Tabs  from './tabs'
+import { Button } from 'element-react';
 const HomePage = ({match}) => {
     const [PageData, setPageData] = useState(null);
     const dispatch = useDispatch()
@@ -20,6 +21,32 @@ const HomePage = ({match}) => {
       })
   }
     const tage = match.params.uid
+    const video = useSelector(state=>state.video)
+    const location = useLocation()
+
+    useEffect(()=>{
+      console.log("LOADED");
+      console.log("video state",video);
+    },[])
+    
+    const addVideo = ()=>{
+      dispatch({
+        type:"create",
+        payload:{
+          name:"video2"
+        }
+      })
+    }
+
+    const removeVideo = (id)=>{
+      dispatch({
+        type:"delete",
+        payload:{
+          id:id
+        }
+      })
+    }
+
     useEffect(()=>{
         dispatch(fetchPosts(tage))
         dispatch(fetchMiniPosts())
@@ -93,6 +120,13 @@ const HomePage = ({match}) => {
     
       return (
         <div className="bg-white">
+            <div className="p-64">
+            <Button onClick={addVideo}>Add Video</Button>
+            
+            {video.videos.map(e=>(
+              <p className="text-black font-bold my-3 transition duration-500 ease-in-out"><span>id :{e.id} </span>name:  {e.name} <span><Button className="bg-red-500 w-10 h-10  text-white rounded-full p-2 mx-4 " onClick={()=>removeVideo(e.id)}>X</Button></span></p>
+            ))}
+            </div>
             <img className=' w-full h-30vh object-cover ' src={PageData && PageData.banner.url} />
              <div className="z-100  w-full flex justify-center text-6xl font-bold  py-20 ">
                 <h1 className="text-4xl text-red-600">{logo&&logo.text}</h1>
